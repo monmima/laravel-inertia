@@ -1892,6 +1892,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -1926,7 +1928,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _inertiajs_progress__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/progress */ "./node_modules/@inertiajs/progress/dist/index.js");
-
 
 
 
@@ -8684,6 +8685,18 @@ var render = function() {
             _vm._v("Contact page")
           ])
         ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        [_c("Link", { attrs: { href: "/" } }, [_vm._v("Home page")])],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        [_c("Link", { attrs: { href: "/contact" } }, [_vm._v("Contact page")])],
         1
       )
     ])

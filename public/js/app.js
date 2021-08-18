@@ -1895,6 +1895,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -1915,11 +1917,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 //
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link
+  }
+});
 
 /***/ }),
 
@@ -8680,13 +8699,13 @@ var render = function() {
     _c("ul", [
       _c(
         "li",
-        [_c("Link", { attrs: { href: "/" } }, [_vm._v("Home page")])],
+        [_c("Link", { attrs: { href: "/contact" } }, [_vm._v("Contact page")])],
         1
       ),
       _vm._v(" "),
       _c(
         "li",
-        [_c("Link", { attrs: { href: "/contact" } }, [_vm._v("Contact page")])],
+        [_c("Link", { attrs: { href: "/hello" } }, [_vm._v("Hello page")])],
         1
       )
     ])
@@ -8715,7 +8734,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("hi there i am the hello page")])
+  return _c("div", [
+    _c("div", [_vm._v("hi there i am the hello page")]),
+    _vm._v(" "),
+    _c("ul", [
+      _c(
+        "li",
+        [_c("Link", { attrs: { href: "/contact" } }, [_vm._v("Contact page")])],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        [_c("Link", { attrs: { href: "/hello" } }, [_vm._v("Hello page")])],
+        1
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -1,7 +1,20 @@
 <template>
-    <div>hi there i am the hello page</div>
+    <div>
+        <div>hi there i am the hello page</div>
+
+        <ul>
+            <!-- <li><inertia-link href="/">Home page</inertia-link></li>
+            <li><inertia-link href="/contact">Contact page</inertia-link></li> -->
+            <!-- <li><Link href="/">Home page</Link></li> -->
+
+            <li><Link href="/contact">Contact page</Link></li>
+            <li><Link href="/hello">Hello page</Link></li>
+        </ul>
+    </div>
 </template>
 
 <script>
-    export default {};
+    import { Link } from '@inertiajs/inertia-vue';
+
+    export default { components: { Link } };
 </script>

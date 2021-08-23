@@ -1937,10 +1937,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link
+  },
+  props: {
+    messages: Array
   }
 });
 
@@ -8860,35 +8871,51 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", [_vm._v("hello page")]),
-    _vm._v(" "),
-    _c("ul", [
-      _c(
-        "li",
-        [_c("Link", { attrs: { href: "/" } }, [_vm._v("Index page")])],
-        1
-      ),
+  return _c(
+    "div",
+    [
+      _c("div", [_vm._v("hello page")]),
       _vm._v(" "),
-      _c(
-        "li",
-        [_c("Link", { attrs: { href: "/contact" } }, [_vm._v("Contact page")])],
-        1
-      ),
+      _c("div", [_vm._v("test")]),
       _vm._v(" "),
-      _c(
-        "li",
-        [_c("Link", { attrs: { href: "/hello" } }, [_vm._v("Hello page")])],
-        1
-      ),
+      _vm._l(_vm.messages, function(message, index) {
+        return _c("div", { key: index }, [
+          _vm._v("\n        " + _vm._s(message.message) + "\n    ")
+        ])
+      }),
       _vm._v(" "),
-      _c(
-        "li",
-        [_c("Link", { attrs: { href: "/test" } }, [_vm._v("test page")])],
-        1
-      )
-    ])
-  ])
+      _c("ul", [
+        _c(
+          "li",
+          [_c("Link", { attrs: { href: "/" } }, [_vm._v("Index page")])],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("Link", { attrs: { href: "/contact" } }, [
+              _vm._v("Contact page")
+            ])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [_c("Link", { attrs: { href: "/hello" } }, [_vm._v("Hello page")])],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [_c("Link", { attrs: { href: "/test" } }, [_vm._v("test page")])],
+          1
+        )
+      ])
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -8937,7 +8964,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "li",
-        [_c("Link", { attrs: { href: "/fasdf" } }, [_vm._v("test page")])],
+        [_c("Link", { attrs: { href: "/test" } }, [_vm._v("test page")])],
         1
       )
     ])

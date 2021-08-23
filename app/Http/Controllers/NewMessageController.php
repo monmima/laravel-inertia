@@ -10,7 +10,8 @@ class NewMessageController extends Controller
     //
     public function index()
     {
-        return inertia("Hello");
+        $messages = NewMessage::all();
+        return inertia("Hello", ["messages" => $messages]);
 
         // JSON
         // return [

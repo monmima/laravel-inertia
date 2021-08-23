@@ -20,7 +20,7 @@ class NewMessageController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            "message" => "required|min:50"
+            "message" => "required|min:1"
         ]);
 
         NewMessage::create($validated);

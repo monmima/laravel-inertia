@@ -19,10 +19,12 @@ class NewMessageController extends Controller
      */
     public function store(Request $request)
     {
-        NewMessage::create($request->all());
+        $validated = $request->validate([
+            "message" => "required|min:50"
+        ]);
+
+        NewMessage::create($validated);
 
         return redirect("/hello-database");
-
-
     }
 }

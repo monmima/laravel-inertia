@@ -1957,13 +1957,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link
   },
   props: {
-    messages: Array
+    messages: Array,
+    errors: Object
   },
   data: function data() {
     return {
@@ -8954,6 +8959,12 @@ var render = function() {
         }),
         0
       ),
+      _vm._v(" "),
+      _vm.errors.message
+        ? _c("div", [
+            _vm._v("\n            " + _vm._s(_vm.errors.message) + "\n        ")
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "form",

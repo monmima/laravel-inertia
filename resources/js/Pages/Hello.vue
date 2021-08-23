@@ -22,6 +22,10 @@
             </div>
 
 
+            <div v-if="errors.message">
+                {{ errors.message }}
+            </div>
+
             <form @submit.prevent="submit">
                 <!-- form.message refers to the name of the column in the database -->
                 <textarea v-model="form.message" rows="8"></textarea>
@@ -41,7 +45,8 @@
     export default {
         components: { Link },
         props: {
-            messages: Array
+            messages: Array,
+            errors: Object
         },
         data() {
             return {

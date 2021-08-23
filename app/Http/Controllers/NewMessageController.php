@@ -12,12 +12,17 @@ class NewMessageController extends Controller
     {
         $messages = NewMessage::all();
         return inertia("Hello", ["messages" => $messages]);
+    }
 
-        // JSON
-        // return [
-        //     "produits" => $produits,
-        //     "categories" => $categories
-        // ];
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        NewMessage::create($request->all());
+
+        return redirect("/hello-database");
+
 
     }
 }

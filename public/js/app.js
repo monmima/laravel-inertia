@@ -1945,6 +1945,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -1952,6 +1964,20 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     messages: Array
+  },
+  data: function data() {
+    return {
+      // refers to the name of the column in the database
+      form: {
+        message: ""
+      }
+    };
+  },
+  methods: {
+    submit: function submit() {
+      // send data to the backend
+      this.$inertia.post("/messages", this.form);
+    }
   }
 });
 
@@ -8819,7 +8845,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", [_vm._v("contact page")]),
+    _c("h1", [_vm._v("contact page")]),
     _vm._v(" "),
     _c("ul", [
       _c(
@@ -8842,7 +8868,11 @@ var render = function() {
       _vm._v(" "),
       _c(
         "li",
-        [_c("Link", { attrs: { href: "/test" } }, [_vm._v("test page")])],
+        [
+          _c("Link", { attrs: { href: "/hello-database" } }, [
+            _vm._v("Hello page with data")
+          ])
+        ],
         1
       )
     ])
@@ -8871,51 +8901,101 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("div", [_vm._v("hello page")]),
+  return _c("div", { staticClass: "min-h-screen bg-blue-500" }, [
+    _c("h1", [_vm._v("hello page")]),
+    _vm._v(" "),
+    _c("hr"),
+    _vm._v(" "),
+    _c("ul", [
+      _c(
+        "li",
+        [_c("Link", { attrs: { href: "/" } }, [_vm._v("Index page")])],
+        1
+      ),
       _vm._v(" "),
-      _c("div", [_vm._v("test")]),
+      _c(
+        "li",
+        [_c("Link", { attrs: { href: "/contact" } }, [_vm._v("Contact page")])],
+        1
+      ),
       _vm._v(" "),
-      _vm._l(_vm.messages, function(message, index) {
-        return _c("div", { key: index }, [
-          _vm._v("\n        " + _vm._s(message.message) + "\n    ")
-        ])
-      }),
+      _c(
+        "li",
+        [_c("Link", { attrs: { href: "/hello" } }, [_vm._v("Hello page")])],
+        1
+      ),
       _vm._v(" "),
-      _c("ul", [
-        _c(
-          "li",
-          [_c("Link", { attrs: { href: "/" } }, [_vm._v("Index page")])],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          [
-            _c("Link", { attrs: { href: "/contact" } }, [
-              _vm._v("Contact page")
-            ])
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          [_c("Link", { attrs: { href: "/hello" } }, [_vm._v("Hello page")])],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          [_c("Link", { attrs: { href: "/test" } }, [_vm._v("test page")])],
-          1
-        )
+      _c(
+        "li",
+        [
+          _c("Link", { attrs: { href: "/hello-database" } }, [
+            _vm._v("Hello page with data")
+          ])
+        ],
+        1
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "flex space-x-10 justify-center items-center" }, [
+      _c(
+        "div",
+        _vm._l(_vm.messages, function(message, index) {
+          return _c(
+            "div",
+            { key: index, staticClass: "bg-white p-8 mb-4 rounded shadow" },
+            [
+              _vm._v(
+                "\n                " +
+                  _vm._s(message.message) +
+                  "\n            "
+              )
+            ]
+          )
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.submit.apply(null, arguments)
+            }
+          }
+        },
+        [
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.form.message,
+                expression: "form.message"
+              }
+            ],
+            attrs: { rows: "8" },
+            domProps: { value: _vm.form.message },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.form, "message", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("button", { attrs: { type: "submit" } }, [_vm._v("Add a message")])
+        ]
+      ),
+      _vm._v(" "),
+      _c("h2", { staticClass: "text-3xl font-extrabold mb-12 text-blue-100" }, [
+        _vm._v("Add a message")
       ])
-    ],
-    2
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -8941,7 +9021,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", [_vm._v("index page")]),
+    _c("h1", [_vm._v("index page")]),
     _vm._v(" "),
     _c("ul", [
       _c(
@@ -8964,7 +9044,11 @@ var render = function() {
       _vm._v(" "),
       _c(
         "li",
-        [_c("Link", { attrs: { href: "/test" } }, [_vm._v("test page")])],
+        [
+          _c("Link", { attrs: { href: "/hello-database" } }, [
+            _vm._v("Hello page with data")
+          ])
+        ],
         1
       )
     ])

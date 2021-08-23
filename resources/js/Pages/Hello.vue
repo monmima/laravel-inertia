@@ -1,26 +1,38 @@
 <template>
-    <div>
-        <div>hello page</div>
+    <div class="min-h-screen bg-blue-500"> <!-- view container -->
 
-        <div>test</div>
+        <h1>hello page</h1>
 
-        <div v-for="(message, index) in messages" v-bind:key="index">
-            {{ message.message }}
-        </div>
+        <hr>
 
         <ul>
-            <!-- <li><inertia-link href="/">Home page</inertia-link></li>
-            <li><inertia-link href="/contact">Contact page</inertia-link></li> -->
-            <!-- <li><Link href="/">Home page</Link></li> -->
-
-
             <li><Link href="/">Index page</Link></li>
             <li><Link href="/contact">Contact page</Link></li>
             <li><Link href="/hello">Hello page</Link></li>
-            <li><Link href="/test">test page</Link></li>
-
+            <li><Link href="/hello-database">Hello page with data</Link></li>
         </ul>
-    </div>
+
+        <div class="flex space-x-10 justify-center items-center">
+
+
+            <div>
+                <div v-for="(message, index) in messages" v-bind:key="index" class="bg-white p-8 mb-4 rounded shadow">
+                    {{ message.message }}
+                </div>
+            </div>
+
+
+            <form @submit.prevent="submit">
+                <!-- form.message refers to the name of the column in the database -->
+                <textarea v-model="form.message" rows="8"></textarea>
+                <button type="submit">Add a message</button>
+            </form>
+
+            <h2 class="text-3xl font-extrabold mb-12 text-blue-100">Add a message</h2>
+        </div>
+    </div> <!-- end view container -->
+
+
 </template>
 
 <script>
@@ -30,6 +42,19 @@
         components: { Link },
         props: {
             messages: Array
+        },
+        data() {
+            return {
+                // refers to the name of the column in the database
+                form: { message: "" }
+            }
+        },
+        methods: {
+            submit() {
+                // send data to the backend
+                this.$inertia.post("/messages", this.form);
+            }
+
         }
 
     };

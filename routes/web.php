@@ -36,4 +36,5 @@ Route::get("/contact", function () {
     return inertia("Contact");
 });
 
-Route::get('/test', "App\Http\Controllers\NewMessageController@index");
+Route::get('/hello-database', "App\Http\Controllers\NewMessageController@index");
+Route::post('/messages', "App\Http\Controllers\NewMessageController@store");

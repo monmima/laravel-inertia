@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div>contact page</div>
+        <h1>contact page</h1>
 
         <ul>
             <!-- <li><inertia-link href="/">Home page</inertia-link></li>
@@ -10,7 +10,7 @@
             <li><Link href="/">Index page</Link></li>
             <li><Link href="/contact">Contact page</Link></li>
             <li><Link href="/hello">Hello page</Link></li>
-            <li><Link href="/test">test page</Link></li>
+            <li><Link href="/hello-database">Hello page with data</Link></li>
         </ul>
     </div>
 </template>

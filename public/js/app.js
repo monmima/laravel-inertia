@@ -1961,6 +1961,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -8867,12 +8883,6 @@ var render = function() {
       _vm._v(" "),
       _c(
         "li",
-        [_c("Link", { attrs: { href: "/hello" } }, [_vm._v("Hello page")])],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "li",
         [
           _c("Link", { attrs: { href: "/hello-database" } }, [
             _vm._v("Hello page with data")
@@ -8914,101 +8924,135 @@ var render = function() {
     _c("ul", [
       _c(
         "li",
-        [_c("Link", { attrs: { href: "/" } }, [_vm._v("Index page")])],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "li",
-        [_c("Link", { attrs: { href: "/contact" } }, [_vm._v("Contact page")])],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "li",
-        [_c("Link", { attrs: { href: "/hello" } }, [_vm._v("Hello page")])],
+        [
+          _c("Link", { attrs: { title: "Index page", href: "/" } }, [
+            _vm._v("Index page")
+          ])
+        ],
         1
       ),
       _vm._v(" "),
       _c(
         "li",
         [
-          _c("Link", { attrs: { href: "/hello-database" } }, [
-            _vm._v("Hello page with data")
+          _c("Link", { attrs: { title: "Contact page", href: "/contact" } }, [
+            _vm._v("Contact page")
           ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        [
+          _c(
+            "Link",
+            {
+              attrs: { title: "Hello page, with data", href: "/hello-database" }
+            },
+            [_vm._v("Hello page with data")]
+          )
         ],
         1
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "flex space-x-10 justify-center items-center" }, [
-      _c(
-        "div",
-        _vm._l(_vm.messages, function(message, index) {
-          return _c(
-            "div",
-            { key: index, staticClass: "bg-white p-8 mb-4 rounded shadow" },
-            [
+    _c("hr"),
+    _vm._v(" "),
+    _c("div", { staticClass: "flex ma-grille" }, [
+      _c("div", [
+        _c(
+          "div",
+          [
+            _vm.messages.length === 0
+              ? _c("div", [
+                  _vm._v(
+                    "\n                    Nothing do display.\n                "
+                  )
+                ])
+              : _vm._l(_vm.messages, function(message, index) {
+                  return _c(
+                    "div",
+                    {
+                      key: index,
+                      staticClass: "bg-white p-8 mb-4 rounded shadow"
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(message.message) +
+                          "\n                "
+                      )
+                    ]
+                  )
+                })
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _vm.errors.message
+          ? _c("div", [
               _vm._v(
                 "\n                " +
-                  _vm._s(message.message) +
+                  _vm._s(_vm.errors.message) +
                   "\n            "
               )
-            ]
-          )
-        }),
-        0
-      ),
+            ])
+          : _vm._e()
+      ]),
       _vm._v(" "),
-      _vm.errors.message
-        ? _c("div", [
-            _vm._v("\n            " + _vm._s(_vm.errors.message) + "\n        ")
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _c(
-        "form",
-        {
-          on: {
-            submit: function($event) {
-              $event.preventDefault()
-              return _vm.submit.apply(null, arguments)
-            }
-          }
-        },
-        [
-          _c("textarea", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.form.message,
-                expression: "form.message"
-              }
-            ],
-            attrs: { rows: "8" },
-            domProps: { value: _vm.form.message },
+      _c("div", [
+        _c("h2", {}, [_vm._v("Add a message")]),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.form, "message", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.submit.apply(null, arguments)
               }
             }
-          }),
-          _vm._v(" "),
-          _c("button", { attrs: { type: "submit" } }, [_vm._v("Add a message")])
-        ]
-      ),
-      _vm._v(" "),
-      _c("h2", { staticClass: "text-3xl font-extrabold mb-12 text-blue-100" }, [
-        _vm._v("Add a message")
+          },
+          [
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.message,
+                  expression: "form.message"
+                }
+              ],
+              attrs: { rows: "8" },
+              domProps: { value: _vm.form.message },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "message", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("button", { attrs: { type: "submit" } }, [_vm._v("Add a message")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -9044,12 +9088,6 @@ var render = function() {
       _c(
         "li",
         [_c("Link", { attrs: { href: "/contact" } }, [_vm._v("Contact page")])],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "li",
-        [_c("Link", { attrs: { href: "/hello" } }, [_vm._v("Hello page")])],
         1
       ),
       _vm._v(" "),

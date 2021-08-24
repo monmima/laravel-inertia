@@ -1,0 +1,12 @@
+body {
+    background-color: #3B82F6;
+}
+
+.ma-grille {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}

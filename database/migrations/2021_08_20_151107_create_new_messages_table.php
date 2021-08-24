@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use App\Models\NewMessage;
+
 class CreateNewMessagesTable extends Migration
 {
     /**
@@ -17,9 +19,11 @@ class CreateNewMessagesTable extends Migration
             $table->id();
             $table->string('message')->nullable();
             $table->timestamps();
-
-
         });
+
+        NewMessage::insert(
+            ["message" => "test 3"]
+        );
     }
 
     /**

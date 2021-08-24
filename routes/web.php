@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use Illuminate\app\Http\Controllers\NewMessageController;
 
+use App\Models\NewMessage;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +36,13 @@ Route::get("/hello", function () {
 //
 Route::get("/contact", function () {
     return inertia("Contact");
+});
+
+// to populate the database
+Route::get("/pop", function () {
+    NewMessage::create(["message" => "testala"]);
+
+    return ("Populated the database.");
 });
 
 Route::get('/hello-database', "App\Http\Controllers\NewMessageController@index");

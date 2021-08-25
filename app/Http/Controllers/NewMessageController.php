@@ -27,4 +27,16 @@ class NewMessageController extends Controller
 
         return redirect("/hello-database");
     }
+
+    /**
+     * delete one record
+     */
+    public function destroy($id)
+    {
+        //
+        $record = NewMessage::findOrFail($id);
+        $record->delete();
+
+        return redirect("/hello-database");
+    }
 }

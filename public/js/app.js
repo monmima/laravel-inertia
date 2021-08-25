@@ -1977,6 +1977,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -1996,7 +2005,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     submit: function submit() {
-      // send data to the backend
+      // sends data to the backend
       this.$inertia.post("/messages", this.form);
     }
   }
@@ -8980,10 +8989,23 @@ var render = function() {
                     [
                       _vm._v(
                         "\n                    " +
+                          _vm._s(message.id) +
+                          "\n                    " +
                           _vm._s(message.message) +
-                          "\n                "
+                          "\n                    "
+                      ),
+                      _c(
+                        "Link",
+                        {
+                          attrs: {
+                            title: "Delete this record",
+                            href: "/" + message.id + "/delete"
+                          }
+                        },
+                        [_vm._v("Delete")]
                       )
-                    ]
+                    ],
+                    1
                   )
                 })
           ],

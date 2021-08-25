@@ -47,3 +47,6 @@ Route::get("/pop", function () {
 
 Route::get('/hello-database', "App\Http\Controllers\NewMessageController@index");
 Route::post('/messages', "App\Http\Controllers\NewMessageController@store");
+
+// this is probably not ideal, but it works
+Route::get('/{id}/delete', "App\Http\Controllers\NewMessageController@destroy");

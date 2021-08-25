@@ -26,7 +26,15 @@
 
                     <!-- if no messages in database -->
                     <div v-else v-for="(message, index) in messages" v-bind:key="index" class="bg-white p-8 mb-4 rounded shadow">
+                        {{ message.id }}
                         {{ message.message }}
+                        <Link title="Delete this record" v-bind:href="`/${ message.id }/delete`">Delete</Link>
+
+                        <!-- <form> -->
+                            <!-- <button>delete</button> -->
+                            <!-- <button @click="deleteRow(id)" class="btn btn-sm btn-danger">Del</button> -->
+                        <!-- </form> -->
+
                     </div>
 
                 </div>
@@ -40,6 +48,7 @@
                 <h2 class="">Add a message</h2>
 
                 <form @submit.prevent="submit">
+
                     <!-- form.message refers to the name of the column in the database -->
                     <textarea v-model="form.message" rows="8"></textarea>
                     <div>
@@ -72,10 +81,9 @@
         },
         methods: {
             submit() {
-                // send data to the backend
+                // sends data to the backend
                 this.$inertia.post("/messages", this.form);
             }
-
         }
 
     };
